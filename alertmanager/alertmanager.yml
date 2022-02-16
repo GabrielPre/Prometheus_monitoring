@@ -1,0 +1,17 @@
+route:
+  receiver: 'mail'
+  repeat_interval: 4h
+  group_by: [ alertname ]
+
+
+receivers:
+- name: 'mail'
+  email_configs:
+  - to: jazerlu0@gmail.com
+    from: jazerlu0@gmail.com
+    smarthost: smtp.gmail.com:587
+    auth_username: jazerlu0@gmail.com
+    auth_identity: jazerlu0@gmail.com
+    auth_password: 'peovjivbmtxygbrz'
+    send_resolved: true
+
