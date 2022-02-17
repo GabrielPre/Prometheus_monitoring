@@ -28,7 +28,20 @@ services:
                 - "./alertmanager:/config"
                 - alertmanager-data:/data
         restart: unless-stopped
-        command: --config.file=/config/alertmanager.yml --log.level=debug 
+        command: --config.file=/config/alertmanager.yml --log.level=debug
+
+    web:
+        container_name: flask-web-app
+        build:
+                context: ./flask_app
+                dockerfile: Dockerfile.dockerfile
+                
+        ports: 
+                - "5000:5000"
+
+    redis:
+      container_name: redis
+      image: "redis:alpine"
 
 volumes:
   prometheus-data:
