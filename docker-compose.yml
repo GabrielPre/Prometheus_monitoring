@@ -32,15 +32,17 @@ services:
 
     web:
         container_name: flask-web-app
+        restart: unless-stopped
         build:
-                context: ./flask_app
-                dockerfile: Dockerfile.dockerfile
-                
+                context: .
+                dockerfile: /flask_app/Dockerfile                
         ports: 
                 - "5000:5000"
+                - "8010:8010"
 
     redis:
       container_name: redis
+      restart: unless-stopped
       image: "redis:alpine"
 
 volumes:
