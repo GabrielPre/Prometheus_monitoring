@@ -18,8 +18,7 @@ scrape_configs:
         - localhost:9090
   - job_name: node
     static_configs:
-      - targets: ['node-exporter:9100']
+      - targets: ['host.docker.internal:9100']
   - job_name: flask_redis_app
     static_configs:
-      - targets:
-        - localhost:8010
+      - targets: ['host.docker.internal:8010']
