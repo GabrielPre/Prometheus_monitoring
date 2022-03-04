@@ -7,11 +7,11 @@ route:
 receivers:
 - name: 'mail'
   email_configs:
-  - to: jazerlu0@gmail.com
-    from: jazerlu0@gmail.com
+  - to: secret
+    from: secret
     smarthost: smtp.gmail.com:587
-    auth_username: jazerlu0@gmail.com
-    auth_identity: jazerlu0@gmail.com
-    auth_password: 'peovjivbmtxygbrz'
+    auth_username: secret
+    auth_identity: secret
+    auth_password: secret
     send_resolved: true
 
